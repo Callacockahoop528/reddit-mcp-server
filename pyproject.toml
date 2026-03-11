@@ -1,0 +1,47 @@
+[project]
+name = "reddit-mcp-server"
+version = "0.1.0"
+description = "A Model Context Protocol Server for Reddit"
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "fastmcp>=3.0.0",
+    "python-dotenv>=1.1.1",
+    "redd>=0.2.0",
+]
+
+[project.scripts]
+reddit-mcp-server = "reddit_mcp_server.adapters.inbound.mcp_cli_adapter:main"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.2.0",
+    "pytest>=8.3.5",
+    "pytest-asyncio>=0.26.0",
+    "pytest-cov>=6.1.1",
+    "ruff>=0.11.2",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/reddit_mcp_server"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = [
+    "integration: Integration tests requiring real infrastructure",
+    "slow: Tests that take > 10 seconds",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "SIM", "RUF"]
