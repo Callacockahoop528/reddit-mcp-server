@@ -40,8 +40,7 @@ class McpErrorMapper:
 
         if isinstance(exception, NotFoundError):
             raise ToolError(
-                f"{prefix}Resource not found. "
-                "Please check the username, subreddit, or permalink."
+                f"{prefix}Resource not found. Please check the username, subreddit, or permalink."
             ) from exception
 
         if isinstance(exception, HttpError):
@@ -52,8 +51,7 @@ class McpErrorMapper:
 
         if isinstance(exception, ParseError):
             raise ToolError(
-                f"{prefix}Failed to parse Reddit response. "
-                "The data format may have changed."
+                f"{prefix}Failed to parse Reddit response. The data format may have changed."
             ) from exception
 
         if isinstance(exception, ReddError):

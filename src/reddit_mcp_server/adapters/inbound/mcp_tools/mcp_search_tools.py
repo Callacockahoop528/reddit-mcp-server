@@ -72,9 +72,7 @@ class McpSearchToolRegistrar(McpToolRegistrar):
             sort: str | None = None,
         ) -> list[dict[str, Any]]:
             try:
-                results = await service.search_subreddit(
-                    subreddit, query, limit=limit, sort=sort
-                )
+                results = await service.search_subreddit(subreddit, query, limit=limit, sort=sort)
                 return McpSerializer.serialize_list(results)
             except Exception as e:
                 McpErrorMapper.map(e, "reddit_search_subreddit")
