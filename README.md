@@ -7,6 +7,12 @@ A [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) server that
 provides AI assistants with access to Reddit data. Built on top of
 [redd](https://github.com/eliasbiondo/redd) — no API keys required.
 
+
+
+https://github.com/user-attachments/assets/af8ae52c-f9f3-4d04-80d5-4be0dfa61b0f
+
+
+
 ---
 
 ## Table of Contents
